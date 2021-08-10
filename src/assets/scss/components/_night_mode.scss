@@ -1,1 +1,16 @@
-.night_mode {}
+.night_mode {
+    background-color: $dark;
+    color: $light;
+
+    .navbar {
+        background-color: $light-gray;
+    
+        .navbar-brand {
+            color: $dark;
+        }
+        .btn {
+            border-color: $dark;
+            color: $dark;
+        }
+    }
+}

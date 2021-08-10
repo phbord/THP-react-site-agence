@@ -1,0 +1,11 @@
+.navbar {
+    background-color: $dark-gray;
+
+    .navbar-brand {
+        color: $light;
+    }
+    .btn {
+        border-color: $light;
+        color: $light;
+    }
+}
