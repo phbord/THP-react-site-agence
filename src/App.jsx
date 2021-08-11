@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import 'bootstrap';
 
@@ -9,12 +9,16 @@ import About from 'pages/About';
 import Works from 'pages/Works';
 
 function App() {
-  const [currentTheme, setCurrentTheme] = useState(false)
+  const [currentTheme, setCurrentTheme] = useState(localStorage.getItem("nightmode") || false);
+
+  useEffect(() => {
+    localStorage.setItem("nightmode", currentTheme);
+  }, [currentTheme]);
 
   return (<>
     <ThemeContext.Provider value={{
       currentTheme,
-      toggleNight: (bool) => setCurrentTheme(bool),
+      toggleNight: () => setCurrentTheme(!currentTheme),
       getNight: (obj) => document.getElementsByClassName(obj)[0].classList.toggle('night-mode')
     }}>
       <div className="App">

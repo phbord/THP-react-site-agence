@@ -1,14 +1,18 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import ThemeContext from 'ThemeContext';
 
 const Header = () => {
   const nightmode = useContext(ThemeContext);
-  const [night, setNight] = useState(false);
+
+  useEffect(() => {
+    if (nightmode == true) {
+      nightmode.getNight('App');
+    };
+  }, []);
 
   const switchNight = () => {
-    nightmode.toggleNight(night);
+    nightmode.toggleNight();
     nightmode.getNight('App');
-    setNight(!night)
   }
 
   return (
