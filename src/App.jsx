@@ -11,9 +11,13 @@ import Works from 'pages/Works';
 
 function App() {
   const [currentTheme, setCurrentTheme] = useState(true)
+  const [currentClass, setCurrentClass] = useState('')
 
   return (<>
-    <ThemeContext.Provider value="">
+    <ThemeContext.Provider value={{
+      currentTheme,
+      toggleCurrentClass: () => setCurrentTheme(!currentTheme)
+    }}>
       <div className="App">
         <Header />
         <Router>

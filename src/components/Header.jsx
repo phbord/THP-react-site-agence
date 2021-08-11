@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import ThemeContext from 'ThemeContext';
 
 const Header = () => {
+  const classApp = useContext(ThemeContext)
+
   return (
     <header>
       <nav className="navbar shadow-sm">
