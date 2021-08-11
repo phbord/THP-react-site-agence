@@ -22,10 +22,10 @@ function App() {
       getNight: (obj) => document.getElementsByClassName(obj)[0].classList.toggle('night-mode')
     }}>
       <div className="App">
-        <Header />
         <Router>
+          <Header />
           <Switch>
-            <Route path="/" component={Home} />
+            <Route path="/" component={Home} exact />
             <Route path="/about" component={About} />
             <Route path="/works" component={Works} />
           </Switch>

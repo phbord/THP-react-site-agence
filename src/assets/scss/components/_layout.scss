@@ -22,3 +22,9 @@ body {
 h1,h2 {
     color: $dark-gray;
 }
+
+ul,li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
