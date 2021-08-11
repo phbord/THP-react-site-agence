@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import 'bootstrap';
 
@@ -10,13 +9,13 @@ import About from 'pages/About';
 import Works from 'pages/Works';
 
 function App() {
-  const [currentTheme, setCurrentTheme] = useState(true)
-  const [currentClass, setCurrentClass] = useState('')
+  const [currentTheme, setCurrentTheme] = useState(false)
 
   return (<>
     <ThemeContext.Provider value={{
       currentTheme,
-      toggleCurrentClass: () => setCurrentTheme(!currentTheme)
+      toggleNight: (bool) => setCurrentTheme(bool),
+      getNight: (obj) => document.getElementsByClassName(obj)[0].classList.toggle('night-mode')
     }}>
       <div className="App">
         <Header />
