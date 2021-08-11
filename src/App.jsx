@@ -9,7 +9,7 @@ import About from 'pages/About';
 import Works from 'pages/Works';
 
 function App() {
-  const [currentTheme, setCurrentTheme] = useState(localStorage.getItem("nightmode") || false);
+  const [currentTheme, setCurrentTheme] = useState(localStorage.nightmode === "true" || false);
 
   useEffect(() => {
     localStorage.setItem("nightmode", currentTheme);

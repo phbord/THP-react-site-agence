@@ -5,7 +5,7 @@ const Header = () => {
   const nightmode = useContext(ThemeContext);
 
   useEffect(() => {
-    if (nightmode == true) {
+    if (nightmode.currentTheme) {
       nightmode.getNight('App');
     };
   }, []);
